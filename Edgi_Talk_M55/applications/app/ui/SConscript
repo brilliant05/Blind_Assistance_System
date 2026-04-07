@@ -1,0 +1,14 @@
+from building import *
+
+cwd = GetCurrentDir()
+path = [cwd, cwd + '/pages', cwd + '/widgets', cwd + '/styles', cwd + '/assets']
+
+src = Glob('*.c')
+src += Glob('pages/*.c')
+src += Glob('widgets/*.c')
+src += Glob('styles/*.c')
+src += Glob('assets/*.c')
+
+group = DefineGroup('AppUI', src, depend=[''], CPPPATH=path)
+
+Return('group')

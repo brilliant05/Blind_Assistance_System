@@ -1,0 +1,8 @@
+from building import *
+
+cwd = GetCurrentDir()
+
+group = []
+group = group + SConscript('ui/SConscript')
+
+Return('group')
